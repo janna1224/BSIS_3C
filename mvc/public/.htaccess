@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteCond %(REQUREST_FILENAME) !-f
-RewriteCond %(REQUREST_FILENAME) !-d
+RewriteCond %{REQUREST_FILENAME} !-f
+RewriteCond %{REQUREST_FILENAME} !-d
 
-RewriteRule ^(.*)$ index.php?ur=$1 [L,QSA]
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
