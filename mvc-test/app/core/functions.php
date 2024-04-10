@@ -6,3 +6,7 @@ function show($stuff)
     print_r($stuff);
     echo '</pre>';
 }
+
+function redirect($path){
+    header("Location: ".ROOT. "/users");
+}
