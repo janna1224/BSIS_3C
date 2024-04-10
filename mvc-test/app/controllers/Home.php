@@ -1,4 +1,4 @@
-yu<?php
+<?php
 
 class Home extends Controller
 {
