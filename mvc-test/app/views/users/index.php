@@ -1,31 +1,41 @@
-<?php include PATH."partials/header.php"?>
+<?php include PATH . "partials/header.php" ?>
 
 <div class="container">
 
-    <h2 class="mt-5">LIST OF USERS</h2>
+  <div class="mt-5 d-flex justify-content-between align-items-center">
+    <h2>List of Users</h2>
 
-    <a href="users/create/" class="btn btn-danger  mb-3">Add New</a>
+    <a href="<?= ROOT ?>/users/create" class="btn btn-primary">Add New</a>
+  </div>
 
-<table class="table table-striped">
+  <table class="table table-striped mt-3">
     <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Action</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th></th>
     </tr>
-    <?php foreach($users as $item) { ?>
-    <tr>
-        <td><?=$item->firstname ?></td>
-        <td><?=$item->lastname ?></td>
-        <td><?=$item->email ?></td>
-        <td>
-            <a href="<?=ROOT?>/users/edit/<?=$item->id?>" class="btn btn-success-sm">Edit</a>
-            <a href="<?= ROOT ?>/users/delete/<?= $item->id ?>" class="btn btn-danger-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+    <?php if ($users != null) { ?>
+      <?php foreach ($users as $item) { ?>
+        <tr>
+          <td><?= $item->firstname ?></td>
+          <td><?= $item->lastname ?></td>
+          <td><?= $item->email ?></td>
+          <td>
+            <a href="<?= ROOT ?>/users/edit/<?= $item->id ?>" class="btn btn-success btn-sm">Edit</a>
+            <a href="<?= ROOT ?>/users/delete/<?= $item->id ?>" class="btn btn-danger btn-sm">Delete</a>
+          </td>
+        </tr>
+      <?php } ?>
+    <?php } else { ?>
+      <tr>
+        <td colspan="3">
+          <h3>No record found.</h3>
         </td>
-    </tr>
+      </tr>
     <?php } ?>
-</table>
+  </table>
+
 </div>
 
-
-<?php include PATH."partials/footer.php"?>
+<?php include PATH . "partials/footer.php" ?>
