@@ -22,7 +22,7 @@
       <input name="password" disabled value="<?= $user->password ?>" type="password" class="form-control">
     </div>
     <input type="hidden" name="id" value="<?= $user->id ?>">
-    <button type="submit" class="btn btn-danger"onclick="return confirm('Delete q to walang kwinta')">Delete</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
   </form>
 
 </div>
